@@ -55,6 +55,13 @@ if label_resi:
     for hl_resi in hl_resi_list:
         view.addResLabels({"chain": hl_chain,"resi": hl_resi},
         {"backgroundColor": "lightgray","fontColor": "black","backgroundOpacity": 0.5})
-
+        
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 showmol(view, height=height, width=width)
