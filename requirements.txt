@@ -31,7 +31,7 @@ idna==3.6
 importlib-metadata==7.0.1
 ipykernel==6.28.0
 ipyspeck==0.6.1
-ipython==8.20.0
+ipython==8.18.1
 ipython-genutils==0.1.0
 ipywidgets==7.6.3
 isoduration==20.11.0
