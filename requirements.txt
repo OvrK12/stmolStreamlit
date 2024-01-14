@@ -1,4 +1,7 @@
-streamlit
-stmol
-py3Dmol
-ipython_genutils
+py3Dmol==2.0.4
+stmol==0.0.9
+streamlit==1.30.0
+ipywidgets==7.6.3
+ipyspeck==0.6.1
+jupyter
+ipython_genutils==0.1.0
