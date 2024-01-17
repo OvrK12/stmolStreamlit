@@ -6,13 +6,13 @@ from stmol import showmol
 st.sidebar.title("View Settings")
 st.session_state.pdb_header = ""
 try:
-    pdb_header = st.query_params["pdbCode"]
+    st.session_state.pdb_header = st.query_params["pdbCode"]
 except:
     None
 
 pdb_code = st.sidebar.text_input(
         label="PDB Code",
-        value=pdb_header,
+        value=st.session_state.pdb_header,
     )
 
 
