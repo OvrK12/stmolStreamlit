@@ -8,7 +8,7 @@ st.session_state.pdb_header = ""
 try:
     st.session_state.pdb_header = st.query_params["pdbCode"]
 except:
-    None
+    st.session_state.pdb_header = "3K8Y"
 
 pdb_code = st.sidebar.text_input(
         label="PDB Code",
