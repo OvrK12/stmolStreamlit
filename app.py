@@ -4,11 +4,18 @@ from stmol import showmol
 
 
 st.sidebar.title("View Settings")
+st.session_state.pdb_header = ""
+try:
+    pdb_header = st.query_params["pdbCode"]
+except:
+    None
 
 pdb_code = st.sidebar.text_input(
         label="PDB Code",
-        value="3K8Y",
+        value=pdb_header,
     )
+
+
 
 hl_resi_list = st.sidebar.multiselect(label="Highlight Residues",options=list(range(1,5000)))
 
@@ -55,13 +62,6 @@ if label_resi:
     for hl_resi in hl_resi_list:
         view.addResLabels({"chain": hl_chain,"resi": hl_resi},
         {"backgroundColor": "lightgray","fontColor": "black","backgroundOpacity": 0.5})
-        
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 showmol(view, height=height, width=width)
